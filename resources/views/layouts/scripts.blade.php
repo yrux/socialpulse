@@ -1,10 +1,24 @@
-<!-- jQuery ,bootstrap and any 3rd party script should be compiled into all.js -->
-<script src="{{asset('js/front/all.js')}}"></script>
-<!--this is the file html team has given, don't minify or compile it-->
-<script src="{{asset('js/front/custom.js')}}"></script>
+<!-- Jquery -->
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ=="
+crossorigin="anonymous"
+referrerpolicy="no-referrer"
+></script>
+<!-- Slick -->
+<script type="text/javascript" src="{{asset('assets/slick/slick.min.js')}}"></script>
+<!-- Fancybox -->
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"
+integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA=="
+crossorigin="anonymous"
+></script>
+<!-- JS -->
+<script src="{{asset('assets/js/app.js')}}"></script>
 <!--DNE-->
 <script src="{{asset('js/public.js')}}"></script>
 <script src="{{asset('js/ycommon.js')}}"></script>
+<script src="{{asset('js/front/bootstrap-notify.min.js')}}"></script>
 <script type="text/javascript">
 (function($){
   $.fn.visible = function(partial){
@@ -41,7 +55,3 @@ $(this).attr('src',$(this).data('url'));
 });
 }
 </script>
-@if(is_adminiy())
-  <script src="{{asset('admin/vendors/ckeditor/ckeditor/ckeditor.js')}}" type="text/javascript"></script>
-  <script src="{{ asset('admin/js/content-management.js') }}"></script>
-@endif

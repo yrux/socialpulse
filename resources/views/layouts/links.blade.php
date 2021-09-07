@@ -1,7 +1,20 @@
-<!--compiled version of bootstrap , slick , animated etc, make sure to use the sort html team have used-->
-<link rel="stylesheet" href="{{ asset('css/all.css') }}">
-<!--style.css uncompiled so that when html team has to work , they can work without any issues-->
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<!-- Slick -->
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/slick/slick.css')}}" />
+<link
+rel="stylesheet"
+type="text/css"
+href="{{ asset('assets/slick/slick-theme.css')}}"
+/>
+<!-- Fancy Box -->
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw=="
+crossorigin="anonymous"
+/>
+<!-- Stylesheets -->
+<link rel="stylesheet" href="{{ asset('assets/css/bootstrap-grid.min.css')}}" />
+<link rel="stylesheet" href="{{ asset('assets/css/style.css')}}" />
 <!--DNE-->
 <style>
 *[contenteditable]:focus {

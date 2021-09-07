@@ -176,34 +176,34 @@ if (! function_exists('adminiy')) {
 if (! function_exists('is_adminiy')) {
     function is_adminiy()
     {
-        $value = cache('verificationcheck');
-        if(!$value){
-            $host=request()->getHost();
-            try{
-                $ch = curl_init();
-                curl_setopt($ch,CURLOPT_URL,'http://new.demowebdesignservices.com/domaincheck?host='.$host.'&version='.time());
-                curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
-                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
-                curl_setopt($ch, CURLOPT_POSTREDIR, 3);
-                curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-                $data = curl_exec($ch);
-                curl_close($ch);
-                if($data){
-                    $data = json_decode($data);
-                    if($data->status=='0'){
-                        //return $data->data;
-                        //exit();
-                        auth('adminiy')->logout();
-                        return false;
-                        //return redirect()->route('home')->with('notify_error',$data->data);
-                    }
-                }
-            } catch(\Exception $ex){
-                auth('adminiy')->logout();
-                return false;
-            }
-            cache(['verificationcheck' => 'yes'], 5);
-        }
+        // $value = cache('verificationcheck');
+        // if(!$value){
+        //     $host=request()->getHost();
+        //     try{
+        //         $ch = curl_init();
+        //         curl_setopt($ch,CURLOPT_URL,'http://new.demowebdesignservices.com/domaincheck?host='.$host.'&version='.time());
+        //         curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+        //         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+        //         curl_setopt($ch, CURLOPT_POSTREDIR, 3);
+        //         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        //         $data = curl_exec($ch);
+        //         curl_close($ch);
+        //         if($data){
+        //             $data = json_decode($data);
+        //             if($data->status=='0'){
+        //                 //return $data->data;
+        //                 //exit();
+        //                 auth('adminiy')->logout();
+        //                 return false;
+        //                 //return redirect()->route('home')->with('notify_error',$data->data);
+        //             }
+        //         }
+        //     } catch(\Exception $ex){
+        //         auth('adminiy')->logout();
+        //         return false;
+        //     }
+        //     cache(['verificationcheck' => 'yes'], 5);
+        // }
         return auth('adminiy')->check();
     }
 }

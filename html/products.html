@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Slick -->
+    <link rel="stylesheet" type="text/css" href="assets/slick/slick.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/slick/slick-theme.css"
+    />
+
+    <!-- Fancy Box -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+      integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw=="
+      crossorigin="anonymous"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Social Pulse</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="topNav">
+          <ul class="topNav_contact">
+            <li>
+              <a href="tel:+14038275502">
+                <i class="fas fa-phone-alt"></i> 1(403) 827-5502
+              </a>
+            </li>
+            <li>
+              <a href="mailto:carolynn1949@gmail.com">
+                <i class="far fa-envelope"></i>
+                info@socialpulsellc.com
+              </a>
+            </li>
+          </ul>
+          <ul class="topNav_social">
+            <li>
+              <a href="#">
+                <i class="bx bxl-facebook bx-sm bx-fade-up-hover"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="bx bxl-twitter bx-sm bx-fade-up-hover"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="bx bxl-pinterest-alt bx-sm bx-fade-up-hover"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="bx bxl-google bx-sm bx-fade-up-hover"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="bx bxl-linkedin bx-sm bx-fade-up-hover"></i>
+              </a>
+            </li>
+            <li class="seperator">|</li>
+            <li>
+              <a href="#">My Account <i class="fas fa-chevron-down"></i></a>
+            </li>
+          </ul>
+        </div>
+        <nav>
+          <a href="index.html" class="nav_logo">
+            <img src="assets/images/logo.png" alt="logo" class="imgFluid" />
+          </a>
+          <ul class="nav_links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="blogs.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li class="nav_cart">
+              <a href="#">
+                <div class="badge">0</div>
+                <i class="bx bx-shopping-bag bx-sm bx-tada-hover"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Page Title -->
+    <div class="pageTitle">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1>Products</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Tabs -->
+    <div class="container">
+      <ul class="tabs">
+        <li class="active">All</li>
+        <li>Logo Tech</li>
+        <li>Wearable Pulse</li>
+        <li>Promo Pulse</li>
+        <li>Entertainment Pulse</li>
+      </ul>
+    </div>
+    <!-- Search Products -->
+    <div class="container searchProduct">
+      <form action="#">
+        <input
+          type="text"
+          name="searchProduct"
+          id="searchProduct"
+          placeholder="Search By Keyword..."
+        />
+        <button type="submit"><i class="bx bx-search bx-sm"></i></button>
+      </form>
+    </div>
+    <!-- Filter -->
+    <div class="container filter">
+      <form action="#">
+        <div>
+          <button type="submit">
+            Filter <i class="bx bx-right-arrow-alt"></i>
+          </button>
+          <select name="sort" id="sort">
+            <option value="Most Popular">Most Popular</option>
+            <option value="Latest">Latest</option>
+            <option value="By Category">By Category</option>
+          </select>
+        </div>
+        <div>
+          <label for="">Show:</label>
+          <select name="show" id="show">
+            <option value="12">12</option>
+            <option value="24">24</option>
+            <option value="36">36</option>
+          </select>
+        </div>
+      </form>
+    </div>
+    <!-- Products -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-4">
+          <div class="product">
+            <img
+              src="assets/images/product-1.png"
+              alt="product"
+              class="imgFluid"
+            />
+            <h4 class="product_title">LED Safety Heel Clip</h4>
+            <div class="product_overlay">
+              <h4>LED Safety Heel Clip</h4>
+              <a href="#" class="themeBtn">Shop Now</a>
+              <div>
+                <span>&dollar;240.00</span>
+                <div>
+                  <i class="bx bx-heart bx-sm bx-tada-hover"></i>
+                  <i class="bx bx-shopping-bag bx-sm bx-tada-hover"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="product">
+            <img
+              src="assets/images/product-2.png"
+              alt="product"
+              class="imgFluid"
+            />
+            <h4 class="product_title">LED Laser Event Band</h4>
+            <div class="product_overlay">
+              <h4>LED Laser Event Band</h4>
+              <a href="#" class="themeBtn">Shop Now</a>
+              <div>
+                <span>&dollar;240.00</span>
+                <div>
+                  <i class="bx bx-heart bx-sm bx-tada-hover"></i>
+                  <i class="bx bx-shopping-bag bx-sm bx-tada-hover"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="product">
+            <img
+              src="assets/images/product-3.png"
+              alt="product"
+              class="imgFluid"
+            />
+            <h4 class="product_title">LED Key Tags</h4>
+            <div class="product_overlay">
+              <h4>LED Key Tags</h4>
+              <a href="#" class="themeBtn">Shop Now</a>
+              <div>
+                <span>&dollar;240.00</span>
+                <div>
+                  <i class="bx bx-heart bx-sm bx-tada-hover"></i>
+                  <i class="bx bx-shopping-bag bx-sm bx-tada-hover"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="product">
+            <img
+              src="assets/images/product-1.png"
+              alt="product"
+              class="imgFluid"
+            />
+            <h4 class="product_title">LED Safety Heel Clip</h4>
+            <div class="product_overlay">
+              <h4>LED Safety Heel Clip</h4>
+              <a href="#" class="themeBtn">Shop Now</a>
+              <div>
+                <span>&dollar;240.00</span>
+                <div>
+                  <i class="bx bx-heart bx-sm bx-tada-hover"></i>
+                  <i class="bx bx-shopping-bag bx-sm bx-tada-hover"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="product">
+            <img
+              src="assets/images/product-2.png"
+              alt="product"
+              class="imgFluid"
+            />
+            <h4 class="product_title">LED Laser Event Band</h4>
+            <div class="product_overlay">
+              <h4>LED Laser Event Band</h4>
+              <a href="#" class="themeBtn">Shop Now</a>
+              <div>
+                <span>&dollar;240.00</span>
+                <div>
+                  <i class="bx bx-heart bx-sm bx-tada-hover"></i>
+                  <i class="bx bx-shopping-bag bx-sm bx-tada-hover"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="product">
+            <img
+              src="assets/images/product-3.png"
+              alt="product"
+              class="imgFluid"
+            />
+            <h4 class="product_title">LED Key Tags</h4>
+            <div class="product_overlay">
+              <h4>LED Key Tags</h4>
+              <a href="#" class="themeBtn">Shop Now</a>
+              <div>
+                <span>&dollar;240.00</span>
+                <div>
+                  <i class="bx bx-heart bx-sm bx-tada-hover"></i>
+                  <i class="bx bx-shopping-bag bx-sm bx-tada-hover"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="product">
+            <img
+              src="assets/images/product-1.png"
+              alt="product"
+              class="imgFluid"
+            />
+            <h4 class="product_title">LED Safety Heel Clip</h4>
+            <div class="product_overlay">
+              <h4>LED Safety Heel Clip</h4>
+              <a href="#" class="themeBtn">Shop Now</a>
+              <div>
+                <span>&dollar;240.00</span>
+                <div>
+                  <i class="bx bx-heart bx-sm bx-tada-hover"></i>
+                  <i class="bx bx-shopping-bag bx-sm bx-tada-hover"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="product">
+            <img
+              src="assets/images/product-2.png"
+              alt="product"
+              class="imgFluid"
+            />
+            <h4 class="product_title">LED Laser Event Band</h4>
+            <div class="product_overlay">
+              <h4>LED Laser Event Band</h4>
+              <a href="#" class="themeBtn">Shop Now</a>
+              <div>
+                <span>&dollar;240.00</span>
+                <div>
+                  <i class="bx bx-heart bx-sm bx-tada-hover"></i>
+                  <i class="bx bx-shopping-bag bx-sm bx-tada-hover"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="product">
+            <img
+              src="assets/images/product-3.png"
+              alt="product"
+              class="imgFluid"
+            />
+            <h4 class="product_title">LED Key Tags</h4>
+            <div class="product_overlay">
+              <h4>LED Key Tags</h4>
+              <a href="#" class="themeBtn">Shop Now</a>
+              <div>
+                <span>&dollar;240.00</span>
+                <div>
+                  <i class="bx bx-heart bx-sm bx-tada-hover"></i>
+                  <i class="bx bx-shopping-bag bx-sm bx-tada-hover"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="product">
+            <img
+              src="assets/images/product-1.png"
+              alt="product"
+              class="imgFluid"
+            />
+            <h4 class="product_title">LED Safety Heel Clip</h4>
+            <div class="product_overlay">
+              <h4>LED Safety Heel Clip</h4>
+              <a href="#" class="themeBtn">Shop Now</a>
+              <div>
+                <span>&dollar;240.00</span>
+                <div>
+                  <i class="bx bx-heart bx-sm bx-tada-hover"></i>
+                  <i class="bx bx-shopping-bag bx-sm bx-tada-hover"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="product">
+            <img
+              src="assets/images/product-2.png"
+              alt="product"
+              class="imgFluid"
+            />
+            <h4 class="product_title">LED Laser Event Band</h4>
+            <div class="product_overlay">
+              <h4>LED Laser Event Band</h4>
+              <a href="#" class="themeBtn">Shop Now</a>
+              <div>
+                <span>&dollar;240.00</span>
+                <div>
+                  <i class="bx bx-heart bx-sm bx-tada-hover"></i>
+                  <i class="bx bx-shopping-bag bx-sm bx-tada-hover"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="product">
+            <img
+              src="assets/images/product-3.png"
+              alt="product"
+              class="imgFluid"
+            />
+            <h4 class="product_title">LED Key Tags</h4>
+            <div class="product_overlay">
+              <h4>LED Key Tags</h4>
+              <a href="#" class="themeBtn">Shop Now</a>
+              <div>
+                <span>&dollar;240.00</span>
+                <div>
+                  <i class="bx bx-heart bx-sm bx-tada-hover"></i>
+                  <i class="bx bx-shopping-bag bx-sm bx-tada-hover"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Pagination -->
+    <ul class="pagination">
+      <li>
+        <a href="#"><i class="bx bx-left-arrow-alt"></i> Previous</a>
+      </li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li>
+        <a href="#">Next <i class="bx bx-right-arrow-alt"></i></a>
+      </li>
+    </ul>
+    <!-- Power Banks -->
+    <div class="powerBanksWrapper">
+      <div class="powerBanks">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-5">
+              <div class="powerBanks_content">
+                <h3>Pick Our</h3>
+                <h2>Power Banks</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna.
+                </p>
+                <a href="#" class="themeBtn">Click Here</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Newsletter -->
+    <div class="newsletter">
+      <div class="container">
+        <div class="row justify-content-center textCenter">
+          <div class="col-12 col-md-6">
+            <div class="newsletter__content">
+              <h4>Sign Up Now &amp; Get 15% Off</h4>
+              <p>
+                Be the first to know about our new arrivals and exclusive
+                offers.
+              </p>
+              <form action="#">
+                <input
+                  type="email"
+                  name="newsletter"
+                  placeholder="Enter your email here"
+                />
+                <button type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-6 textCenter">
+            <div class="footer_content">
+              <img src="assets/images/logo.png" alt="logo" class="imgFluid" />
+              <ul class="footer_links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+              <ul class="footer_social">
+                <li>
+                  <a href="#">
+                    <i class="bx bxl-facebook bx-sm bx-fade-up-hover"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="bx bxl-twitter bx-sm bx-fade-up-hover"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="bx bxl-pinterest-alt bx-sm bx-fade-up-hover"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="bx bxl-google bx-sm bx-fade-up-hover"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="bx bxl-linkedin bx-sm bx-fade-up-hover"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        Copyright © 2021 Social Pulse LLC. All Rights Reserved.
+      </div>
+    </footer>
+  </body>
+  <!-- Jquery -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+
+  <!-- Slick -->
+  <script type="text/javascript" src="assets/slick/slick.min.js"></script>
+
+  <!-- Fancybox -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"
+    integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA=="
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- JS -->
+  <script src="assets/js/app.js"></script>
+</html>
