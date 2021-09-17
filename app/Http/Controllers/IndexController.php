@@ -6,7 +6,9 @@ use Illuminate\Support\Str;
 use App\Http\Requests\yTableinquiryRequest;
 use App\Http\Requests\yTablecareerRequest;
 use App\Model\inquiry;
+use App\Model\products;
 use App\Model\m_flag;
+use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
@@ -36,13 +38,41 @@ class IndexController extends Controller
     {
         return view('contactus')->with('title','Contact us')->with('contactmenu',true);
     }
+    public function about(){
+        return view('aboutus')->with('title','About us')->with('aboutMenu',true);
+    }
+    public function products(m_flag $m_flag){
+        $categories = m_flag::where('is_active',1)->where('flag_type','PRODUCTCATEGORY')->orderBy('id','asc')->get();
+        return view('products')->with('title','Products')->with('productsMenu',true)
+        ->with(compact('categories','m_flag'));
+    }
+    public function product(products $product){
+        return view('product')->with('title',$product->name)->with('productsMenu',true)
+        ->with(compact('product'));
+    }
+    public function productsdata(Request $request){
+        $data = Helper::returnMod('products');
+        if(!empty($request->q)){
+            $data = $data->where('name','like','%'.$request->q.'%');
+        }
+        switch ($request->sort){
+            case 'Most Popular':
+                $data = $data->orderBy('category_id','desc');
+            break;
+            case 'Latest':
+                $data = $data->orderBy('id','desc');
+            break;
+            case 'By Category':
+                $data = $data->orderBy('category_id','desc');
+            break;
+        }
+        return $data->paginate($request->limit);
+    }
     public function contactusSubmit(yTableinquiryRequest $request){
         $validator = $request->validated();
         $inquiry = new inquiry;
         $inquiry->inquiries_name = $request->inquiries_name;
-        $inquiry->inquiries_lname = $request->inquiries_lname;
         $inquiry->inquiries_email = $request->inquiries_email;
-        $inquiry->inquiries_phone = $request->inquiries_phone;
         $inquiry->extra_content = $request->extra_content;
         $inquiry->save();
         $this->echoSuccess("Inquiry Saved");

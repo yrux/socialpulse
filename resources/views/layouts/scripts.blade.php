@@ -54,4 +54,24 @@ $(this).attr('src',$(this).data('url'));
 }
 });
 }
+function inquiry_error(res){
+  if(res){
+    if(isJSON(res)){
+      res = JSON.parse(res);
+      if(res.errors){
+        var _errors='';
+        for(j in res.errors){
+          _errors+=res.errors[j].join('</br>')+'</br>';
+        }
+        generateNotification('0',_errors);
+      }
+    }
+  }
+}
+function inquiry_success(_msg){
+    if(_msg.status){
+        generateNotification('1','Thank you! your message has been sent to admin.');
+    $('#inquiry_form')[0].reset();
+    }
+}
 </script>

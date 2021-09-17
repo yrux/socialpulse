@@ -1,4 +1,4 @@
- var ytabled;
+const tablename='products';const ydebugger=false; var ytabled;
  //var _imageCol = tablename+'_image';
 /*When you want to use FAST CRUD of ytable and you have used joins in the listing use 
 type:'ignore' 
@@ -13,35 +13,50 @@ _default will set a default value for new records
     /*turn below line on and pass flag type in the function it'll fetch latest dropdown automatically
     it'll load page a bit late but it works fine for dropdowns
     */
-    //var TYPEDATA = await getFlagDropdown('FLAGTYPE');
+    var TYPEDATA = await getFlagDropdown('PRODUCTCATEGORY');
     ytabled = new ytable(tablename,[
         {
             column:'id',
             name:'ID',
             type:'hidden',
         }
-        // ,{
-        //     column:'field_slug',
-        //     name:'Slug',
-        //     type:'slug',
-        //     slugof:'field_name',
-        //     hiddenInList:true,
-        // }
-        // ,{
-        //     column:'field_name',
-        //     name:'Name',
-        //     type:'text',
-        // }
-        // ,{
-        //     column:'field_description',
-        //     name:'Description',
-        //     type:'textarea',
-        // }
-        // ,{
-        //     column:'field_description_wyswig',
-        //     name:'WYSWIG',
-        //     type:'wyswig',
-        // }
+        ,{
+            column:'name',
+            name:'Name',
+            type:'text',
+        }
+        ,{
+            column:'slug',
+            name:'Slug',
+            type:'slug',
+            slugof:'name',
+            hiddenInList:true,
+        }
+        ,{
+            column:'short_description',
+            name:'Short Description',
+            type:'textarea',
+            hiddenInList: true,
+        }
+        ,{
+            column:'description',
+            name:'Description',
+            type:'wyswig',
+            hiddenInList: true,
+        }
+        ,{
+            column: 'price',
+            name: 'Price',
+            type:'number',
+            _default: '0',
+        }
+        ,{
+            column: 'discount',
+            name: 'Discount',
+            type:'number',
+            _default: '0',
+            hiddenInList: true,
+        }
         // ,{
         //     column:'field_type',
         //     name:'Type',
@@ -61,14 +76,14 @@ _default will set a default value for new records
         //     hiddenInList:true,
         //     callback:'setDropdownValue'
         // }
-        // ,{
-        //     column:'field_type',
-        //     name:'Type',
-        //     type:'select2',
-        //     typeData:TYPEDATA,
-        //     hiddenInList:true,
-        //     callback:'setDropdownValue'
-        // }
+        ,{
+            column:'category_id',
+            name:'Category',
+            type:'select2',
+            typeData:TYPEDATA,
+            hiddenInList:true,
+            callback:'setDropdownValue'
+        }
         // ,{
         //     column:'field_type',
         //     name:'Type',
@@ -95,19 +110,19 @@ _default will set a default value for new records
         //     hiddenInList:true,
         //     typeData:'createAnchor'
         // }
-        // ,{
-        //     column:'id',
-        //     name:'multiimage',
-        //     type:'multiimage',
-        //     hiddenInList:true,
-        //     _table:`${tablename}_optional`,
-        // }
         ,{
             column:'id',
-            name:'Image',
+            name:'Main Image',
             type:'image',
             hiddenInList:true,
             _table:tablename,
+        }
+        ,{
+            column:'id',
+            name:'Optional Images',
+            type:'multiimage',
+            hiddenInList:true,
+            _table:`${tablename}_optional`,
         }
         // ,{
         //     column:'table_thumb_image',
@@ -128,6 +143,13 @@ _default will set a default value for new records
             callback:'is_active',
             type:'checkbox',
             _default:'1',
+        }
+        ,{
+            column:'is_featured',
+            name:'Is Featured?',
+            callback:'is_active',
+            type:'checkbox',
+            _default:'0',
         }
     ],
     [

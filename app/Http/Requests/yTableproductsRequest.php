@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class yTableinquiryRequest extends FormRequest
+class yTableproductsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,10 @@ class yTableinquiryRequest extends FormRequest
     public function rules()
     {
         return [
-            'inquiries_email'=>'required|email',
-            'inquiries_name'=>'required|max:255',
+            'name'=>'required|max:255',
+            'slug'=>'required|max:300|unique:products,slug,'.$this->id,
+            'price'=>'required',
+            'category_id'=>'required',
         ];
     }
 }

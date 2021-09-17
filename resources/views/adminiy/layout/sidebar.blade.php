@@ -24,6 +24,7 @@
                         <li><a target="_blank" href="{{route('home')}}"><i class="zmdi zmdi-globe"></i> Visit Website</a></li>
                         <li class="{{Route::currentRouteName()=='adminiy.config'?'navigation__active':''}}"><a href="{{route('adminiy.config')}}"><i class="zmdi zmdi-settings zmdi-hc-fw"></i> Config</a></li>
                         <li class="{{isset($inquiry_ytmenu)?'navigation__active':''}}"><a href="{{url('adminiy/listing/inquiry-listing#type=1')}}"><i class="zmdi zmdi-plus zmdi-hc-fw"></i> Contact Inquiry</a></li>
+                        <li class="{{isset($products_ytmenu)?'navigation__active':''}}"><a href="{{url('adminiy/listing/products-listing')}}"><i class="zmdi zmdi-plus zmdi-hc-fw"></i> Manage Products</a></li>
                         <!--Example for sub menus -->
                         <!--product management-->
                         <!-- <?php 
@@ -48,7 +49,7 @@
                         <li class="navigation__sub {{in_array($currentMenu,$underMenuActive)?'navigation__sub--active navigation__sub--toggled flag_here':''}}">
                             <a href="javascript:void(0)"><i class="zmdi zmdi-collection-item"></i><span data-toggle="tooltip" title="in Adminiy {{$v}} we manage dropdowns,autocomplets etc from the menus under Manage Flags">Manage Flags</span></a>
                             <ul>
-                                <li class="TESTFLAG_flag"><a href="{{url('adminiy/listing/m_flag-listing#flag_type=TESTFLAG')}}">TEST FLAG</a></li>
+                                <li class="PRODUCTCATEGORY_flag"><a href="{{url('adminiy/listing/m_flag-listing#flag_type=PRODUCTCATEGORY')}}">Product Category</a></li>
                             </ul>
                         </li>
                     </ul>

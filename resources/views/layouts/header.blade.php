@@ -55,10 +55,10 @@
       </a>
       <ul class="nav_links">
         <li><a href="{{route('home')}}">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="products.html">Products</a></li>
+        <li><a href="{{route('about')}}">About Us</a></li>
+        <li><a href="{{route('products')}}">Products</a></li>
         <li><a href="blogs.html">Blog</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="{{route('contactus')}}">Contact Us</a></li>
         <li class="nav_cart">
           <a href="#">
             <div class="badge">0</div>
