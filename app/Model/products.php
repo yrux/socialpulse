@@ -8,16 +8,21 @@ class products extends Model
 {
     protected $table='products';
     protected $with = ['image'];
-    protected $appends = ['d_price','formatted_price_discounted'];
+    protected $appends = ['d_price','formatted_price_discounted','currency'];
     public function image()
     {
         return $this->morphOne('App\Model\Image', 'imageable')->where('table_name', 'products');
     }
-    public function getDPriceAttribute(){
-        return ($this->price-(($this->price/100)*$this->discount));
+    public function getDPriceAttribute()
+    {
+        if($this->discount>0){
+            return ($this->price-(($this->price/100)*$this->discount));
+        }
+        return $this->price;
     }
-    public function getFormattedPriceDiscountedAttribute(){
-        return number_format(($this->price-(($this->price/100)*$this->discount)),2,'.',',');
+    public function getFormattedPriceDiscountedAttribute()
+    {
+        return number_format($this->d_price,2,'.',',');
     }
     public function getRouteKeyName(){
         return 'slug';
@@ -28,5 +33,8 @@ class products extends Model
     }
     public function category(){
         return $this->hasOne('App\Model\m_flag','id','category_id');
+    }
+    public function getCurrencyAttribute(){
+        return '$';
     }
 }

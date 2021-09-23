@@ -6,7 +6,9 @@
 		<div class="row justify-content-center">
 			<div class="col-12 col-lg-6 textCenter">
 				<div class="footer_content">
-					<img src="assets/images/logo.png" alt="logo" class="imgFluid" />
+					<?php
+        print Helper::dynamicImages(asset('/'), 'assets/images/logo.png', array("data-width" => "229", "data-height" => "109", "alt" => "logo", "class" => "imgFluid"), 'logo', true);
+        ?>
 					<ul class="footer_links">
 						<li><a href="#">Home</a></li>
 						<li><a href="#">About Us</a></li>
@@ -46,6 +48,6 @@
 		</div>
 	</div>
 	<div class="copyright">
-		Copyright © 2021 Social Pulse LLC. All Rights Reserved.
+		Copyright © {{date('Y')}} Social Pulse LLC. All Rights Reserved.
 	</div>
 </footer>

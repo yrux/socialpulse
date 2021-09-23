@@ -34,6 +34,28 @@ CREATE TABLE `adminiy` (
 insert  into `adminiy`(`id`,`email`,`password`,`name`,`remember_token`,`is_active`,`created_at`,`updated_at`,`is_deleted`) values 
 (1,'admin@project.com','$2y$10$fJwkT72wGNXCIBSqq.5JveP/rSFoSRfrSvotM2BJYPO6xgJFgSWVm','Admin','o2JZSUfWev6IQiF8r1uhtvvYriBDmXpXl4Kv3Fc77NJ5BWHks5vwjc0G3Knj',1,'2019-03-28 16:43:17','2019-04-20 15:25:01',0);
 
+/*Table structure for table `coupons` */
+
+DROP TABLE IF EXISTS `coupons`;
+
+CREATE TABLE `coupons` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(20) DEFAULT NULL,
+  `discount` float DEFAULT 0,
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `is_active` tinyint(4) DEFAULT 1,
+  `is_deleted` tinyint(4) DEFAULT 0,
+  `user_id` tinyint(4) DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `coupons` */
+
+insert  into `coupons`(`id`,`code`,`discount`,`updated_at`,`created_at`,`is_active`,`is_deleted`,`user_id`) values 
+(1,'ABCD',50,'2021-09-23 17:53:47','2021-09-23 17:53:47',1,0,0),
+(2,'BCA',20,'2021-09-23 17:53:52','2021-09-23 17:53:52',1,0,0);
+
 /*Table structure for table `flag_data` */
 
 DROP TABLE IF EXISTS `flag_data`;
@@ -166,6 +188,78 @@ insert  into `m_flag`(`id`,`flag_type`,`flag_value`,`created_at`,`updated_at`,`f
 (1965,'PRODUCTCATEGORY','Promo Pulse','2021-09-16 16:45:30','2021-09-16 16:45:30',NULL,'0','1','0',NULL,0,0,0),
 (1966,'PRODUCTCATEGORY','Entertainment Pulse','2021-09-16 16:45:40','2021-09-16 16:45:40',NULL,'0','1','0',NULL,0,0,0);
 
+/*Table structure for table `order_products` */
+
+DROP TABLE IF EXISTS `order_products`;
+
+CREATE TABLE `order_products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `qty` int(11) NOT NULL DEFAULT 0,
+  `price` float NOT NULL DEFAULT 0,
+  `discount` float NOT NULL DEFAULT 0,
+  `rowtotal` float NOT NULL DEFAULT 0,
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `order_products` */
+
+insert  into `order_products`(`id`,`order_id`,`product_id`,`qty`,`price`,`discount`,`rowtotal`,`updated_at`,`created_at`) values 
+(1,7,3,20,110,20,1760,'2021-09-23 19:11:54','2021-09-23 19:11:54'),
+(2,7,2,30,110,0,3300,'2021-09-23 19:11:54','2021-09-23 19:11:54'),
+(3,8,3,20,110,20,1760,'2021-09-23 19:12:03','2021-09-23 19:12:03'),
+(4,8,2,30,110,0,3300,'2021-09-23 19:12:04','2021-09-23 19:12:04'),
+(5,9,3,20,110,20,1760,'2021-09-23 19:12:48','2021-09-23 19:12:48'),
+(6,9,2,30,110,0,3300,'2021-09-23 19:12:48','2021-09-23 19:12:48'),
+(7,10,3,20,110,20,1760,'2021-09-23 19:41:07','2021-09-23 19:41:07'),
+(8,10,2,30,110,0,3300,'2021-09-23 19:41:07','2021-09-23 19:41:07'),
+(9,11,1,10,50,10,450,'2021-09-23 20:42:32','2021-09-23 20:42:32');
+
+/*Table structure for table `orders` */
+
+DROP TABLE IF EXISTS `orders`;
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(100) NOT NULL,
+  `last_name` varchar(100) NOT NULL,
+  `company_name` varchar(255) DEFAULT NULL,
+  `address` varchar(255) NOT NULL,
+  `address2` varchar(255) DEFAULT NULL,
+  `city` varchar(100) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `total_products` int(11) DEFAULT NULL,
+  `subtotal` float DEFAULT NULL,
+  `discount` float DEFAULT NULL,
+  `total` float DEFAULT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `user_id` int(11) DEFAULT 0,
+  `order_status` enum('Pending','Payment Failed','Payment Success','Delivered','Junk','Return') DEFAULT 'Pending',
+  `is_deleted` tinyint(4) DEFAULT 0,
+  `is_active` tinyint(4) DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `orders` */
+
+insert  into `orders`(`id`,`first_name`,`last_name`,`company_name`,`address`,`address2`,`city`,`email`,`phone`,`total_products`,`subtotal`,`discount`,`total`,`updated_at`,`created_at`,`user_id`,`order_status`,`is_deleted`,`is_active`) values 
+(1,'test','test','12','123','123','123','132@gmail.com','123',NULL,NULL,NULL,NULL,'2021-09-23 19:00:53','2021-09-23 19:00:53',0,'Pending',0,1),
+(2,'test','test','12','123','123','123','132@gmail.com','123',NULL,NULL,NULL,NULL,'2021-09-23 19:01:02','2021-09-23 19:01:02',0,'Pending',0,1),
+(3,'test','test','12','123','123','123','132@gmail.com','123',NULL,NULL,NULL,NULL,'2021-09-23 19:03:46','2021-09-23 19:03:46',0,'Pending',0,1),
+(4,'test','test','12','123','123','123','132@gmail.com','123',2,5060,50,2530,'2021-09-23 19:05:03','2021-09-23 19:05:03',0,'Pending',0,1),
+(5,'test','test','12','123','123','123','132@gmail.com','123',2,5060,50,2530,'2021-09-23 19:05:08','2021-09-23 19:05:08',0,'Pending',0,1),
+(6,'test','test','12','123','123','123','132@gmail.com','123',2,5060,50,2530,'2021-09-23 19:09:50','2021-09-23 19:09:50',0,'Pending',0,1),
+(7,'test','test','12','123','123','123','132@gmail.com','123',2,5060,50,2530,'2021-09-23 19:11:54','2021-09-23 19:11:54',0,'Pending',0,1),
+(8,'test','test','12','123','123','123','132@gmail.com','123',2,5060,50,2530,'2021-09-23 19:12:03','2021-09-23 19:12:03',0,'Pending',0,1),
+(9,'test','test','12','123','123','123','132@gmail.com','123',2,5060,50,2530,'2021-09-23 19:12:48','2021-09-23 19:12:48',0,'Pending',0,1),
+(10,'test','test','12','123','123','123','132@gmail.com','123',2,5060,50,2530,'2021-09-23 19:41:07','2021-09-23 19:41:07',0,'Pending',0,1),
+(11,'1231','1231','123','test',NULL,'123','1231@gmail.com','1231231231',1,450,50,225,'2021-09-23 20:42:32','2021-09-23 20:42:32',0,'Pending',0,1);
+
 /*Table structure for table `password_resets` */
 
 DROP TABLE IF EXISTS `password_resets`;
@@ -290,7 +384,7 @@ CREATE TABLE `ytables` (
   `model_name` varchar(255) DEFAULT NULL COMMENT 'laravel model name, Fill this when you have different model name and different table name',
   `table_name` varchar(255) DEFAULT NULL COMMENT 'database table name',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 /*Data for the table `ytables` */
 
@@ -300,7 +394,9 @@ insert  into `ytables`(`id`,`js_file`,`page_heading`,`page_message`,`new_url`,`i
 (15,'admin/listings/imagetable-listing.js','Imagetable','','adminiy/crud/imagetable',0,'2019-04-17 19:28:31','2019-04-17 19:28:31','',1,'','imagetable'),
 (16,'admin/listings/inquiry-listing.js','Inquiry','','adminiy/crud/inquiry',0,'2019-04-18 17:49:24','2019-04-19 19:42:01','',1,'','inquiry'),
 (17,'admin/listings/m_flag-listing.js','Flag','','adminiy/crud/m_flag',0,'2019-04-19 06:51:33','2019-04-19 11:58:07','',1,'','m_flag'),
-(18,'admin/listings/products-listing.js','Products','','adminiy/crud/products',0,'2021-09-15 20:39:52','2021-09-15 20:39:52','',1,'','products');
+(18,'admin/listings/products-listing.js','Products','','adminiy/crud/products',0,'2021-09-15 20:39:52','2021-09-15 20:39:52','',1,'','products'),
+(19,'admin/listings/coupons-listing.js','Coupons','','adminiy/crud/coupons',0,'2021-09-23 20:40:38','2021-09-23 20:40:38','',1,'','coupons'),
+(20,'admin/listings/orders-listing.js','Orders','','adminiy/crud/orders',0,'2021-09-23 20:40:41','2021-09-23 20:40:41','',1,'','orders');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

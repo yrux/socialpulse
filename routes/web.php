@@ -8,6 +8,16 @@ Route::post('/contact-us-submit', 'IndexController@contactusSubmit')->name('cont
 
 Route::get('/product/{product?}', 'IndexController@product')->name('product');
 
+Route::get('/cart', 'CartController@index')->name('cart.index');
+Route::get('/cart/direct/{product}', 'CartController@directadd')->name('cart.add.direct');
+Route::get('/cart/detail', 'CartController@getCart')->name('cart.add.detail');
+Route::post('/cart/updateQty/{product?}', 'CartController@updateQty')->name('cart.update.qty');
+Route::get('/cart/remove/{product?}', 'CartController@removeCart')->name('cart.remove');
+Route::post('/cart/apply-coupon', 'CartController@couponApply')->name('cart.coupon.apply');
+
+Route::get('/checkout', 'CartController@checkout')->name('checkout.index');
+Route::post('/placeOrder', 'CartController@placeOrder')->name('checkout.placeOrder');
+Route::get('/checkout/invoice/{order}', 'CartController@invoice')->name('checkout.invoice');
 
 Auth::routes();
 Route::get('/backoffice', function(){

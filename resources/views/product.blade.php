@@ -48,7 +48,7 @@
                     <?php print $product->description; ?>
 
                     <div class="btn-appointment-detail">
-                        <a href="cart.html">Add to cart</a>
+                        <a href="{{route('cart.add.direct',[$product])}}">Add to cart</a>
                     </div>
                 </div>
             </div>

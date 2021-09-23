@@ -24,7 +24,19 @@
                         <li><a target="_blank" href="{{route('home')}}"><i class="zmdi zmdi-globe"></i> Visit Website</a></li>
                         <li class="{{Route::currentRouteName()=='adminiy.config'?'navigation__active':''}}"><a href="{{route('adminiy.config')}}"><i class="zmdi zmdi-settings zmdi-hc-fw"></i> Config</a></li>
                         <li class="{{isset($inquiry_ytmenu)?'navigation__active':''}}"><a href="{{url('adminiy/listing/inquiry-listing#type=1')}}"><i class="zmdi zmdi-plus zmdi-hc-fw"></i> Contact Inquiry</a></li>
-                        <li class="{{isset($products_ytmenu)?'navigation__active':''}}"><a href="{{url('adminiy/listing/products-listing')}}"><i class="zmdi zmdi-plus zmdi-hc-fw"></i> Manage Products</a></li>
+                        <?php 
+                            $underMenuActive=array('products_ytmenu','coupons_ytmenu','orders_ytmenu'); 
+                            $currentMenu=isset($menuArray)?$menuArray[0]:'';
+                        ?>
+                        <li class="navigation__sub {{in_array($currentMenu,$underMenuActive)?'navigation__sub--active navigation__sub--toggled flag_here':''}}">
+                            <a href="javascript:void(0)"><i class="zmdi zmdi-shopping-cart-plus zmdi-hc-fw"></i><span data-toggle="tooltip" title="From here you can manage all of your Orders, Products, Prices, Reports etc">Manage Ecommerce</span></a>
+                            <ul>
+                                <li class="{{isset($products_ytmenu)?'navigation__active':''}}"><a href="{{url('adminiy/listing/products-listing')}}">Products</a></li>
+                                <li class="{{isset($coupons_ytmenu)?'navigation__active':''}}"><a href="{{url('adminiy/listing/coupons-listing')}}">Coupons</a></li>
+                                <li class="{{isset($orders_ytmenu)?'navigation__active':''}}"><a href="{{url('adminiy/listing/orders-listing')}}">Drders</a></li>
+                            </ul>
+                        </li>
+                        <!--product management end-->
                         <!--Example for sub menus -->
                         <!--product management-->
                         <!-- <?php 

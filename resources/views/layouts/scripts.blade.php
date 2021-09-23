@@ -18,8 +18,14 @@ crossorigin="anonymous"
 <!--DNE-->
 <script src="{{asset('js/public.js')}}"></script>
 <script src="{{asset('js/ycommon.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>  
 <script src="{{asset('js/front/bootstrap-notify.min.js')}}"></script>
 <script type="text/javascript">
+function getCart(){
+  ajaxifyN('','GET','{{route('cart.add.detail')}}').then(function(e){
+    $('.nav_cart').find('.badge').html(e.count)
+  })
+}
 (function($){
   $.fn.visible = function(partial){
       var $t        = $(this),
@@ -35,6 +41,7 @@ crossorigin="anonymous"
 })(jQuery);
 $(document).ready(function(){
 showvisible();
+getCart()
 $(window).scroll(function(){
         setTimeout(function(){ showvisible() }, 100);
     });

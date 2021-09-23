@@ -60,7 +60,7 @@
         <li><a href="blogs.html">Blog</a></li>
         <li><a href="{{route('contactus')}}">Contact Us</a></li>
         <li class="nav_cart">
-          <a href="#">
+          <a href="{{route('cart.index')}}">
             <div class="badge">0</div>
             <i class="bx bx-shopping-bag bx-sm bx-tada-hover"></i>
           </a>

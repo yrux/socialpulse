@@ -13,3 +13,24 @@ $(document).ready(function () {
     });
   }
 });
+
+
+
+$('.slider-for').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+
+  asNavFor: '.slider-nav'
+});
+$('.slider-nav').slick({
+  infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  asNavFor: '.slider-for',
+  vertical: true,
+  dots: false,
+  arrows: false,
+  focusOnSelect: true
+});
