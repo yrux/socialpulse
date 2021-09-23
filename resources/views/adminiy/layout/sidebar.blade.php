@@ -33,7 +33,7 @@
                             <ul>
                                 <li class="{{isset($products_ytmenu)?'navigation__active':''}}"><a href="{{url('adminiy/listing/products-listing')}}">Products</a></li>
                                 <li class="{{isset($coupons_ytmenu)?'navigation__active':''}}"><a href="{{url('adminiy/listing/coupons-listing')}}">Coupons</a></li>
-                                <li class="{{isset($orders_ytmenu)?'navigation__active':''}}"><a href="{{url('adminiy/listing/orders-listing')}}">Drders</a></li>
+                                <li class="{{isset($orders_ytmenu)?'navigation__active':''}}"><a href="{{url('adminiy/listing/orders-listing')}}">Orders</a></li>
                             </ul>
                         </li>
                         <!--product management end-->
