@@ -7,7 +7,7 @@ use App\Http\Requests\yTableinquiryRequest;
 use App\Http\Requests\yTablecareerRequest;
 use App\Model\inquiry;
 use App\Model\products;
-use App\Model\m_flag;
+use App\Model\{m_flag, blogs};
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -40,6 +40,15 @@ class IndexController extends Controller
     }
     public function about(){
         return view('aboutus')->with('title','About us')->with('aboutMenu',true);
+    }
+    public function blogs(){
+        $blogs = Helper::returnMod('blogs')->orderBy('id','asc')->paginate(7);
+        return view('blogs')->with('title','Blogs')->with('blogsMenu',true)
+        ->with(compact('blogs'));
+    }
+    public function blogDetail(blogs $blog){
+        return view('blogDetail')->with('title',$blog->title)->with('blogsMenu',true)
+        ->with(compact('blog'));
     }
     public function products(m_flag $m_flag){
         $categories = m_flag::where('is_active',1)->where('flag_type','PRODUCTCATEGORY')->orderBy('id','asc')->get();
