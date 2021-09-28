@@ -57,7 +57,7 @@
         <li><a href="{{route('home')}}">Home</a></li>
         <li><a href="{{route('about')}}">About Us</a></li>
         <li><a href="{{route('products')}}">Products</a></li>
-        <li><a href="blogs.html">Blog</a></li>
+        <li><a href="{{route('blogs')}}">Blog</a></li>
         <li><a href="{{route('contactus')}}">Contact Us</a></li>
         <li class="nav_cart">
           <a href="{{route('cart.index')}}">

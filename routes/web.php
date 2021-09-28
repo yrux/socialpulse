@@ -1,6 +1,8 @@
 <?php
 Route::get('/', 'IndexController@index')->name('home');
 Route::get('/about', 'IndexController@about')->name('about');
+Route::get('/blogs', 'IndexController@blogs')->name('blogs');
+Route::get('/blog-detail/{blog}', 'IndexController@blogDetail')->name('blogDetail');
 Route::get('/contact-us', 'IndexController@contactus')->name('contactus');
 Route::get('/products/{m_flag?}', 'IndexController@products')->name('products');
 Route::post('/products-data', 'IndexController@productsdata')->name('productsdata');

@@ -10,11 +10,11 @@
         print Helper::dynamicImages(asset('/'), 'assets/images/logo.png', array("data-width" => "229", "data-height" => "109", "alt" => "logo", "class" => "imgFluid"), 'logo', true);
         ?>
 					<ul class="footer_links">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Products</a></li>
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">Contact Us</a></li>
+						<li><a href="{{route('home')}}">Home</a></li>
+						<li><a href="{{route('about')}}">About Us</a></li>
+						<li><a href="{{route('products')}}">Products</a></li>
+						<li><a href="{{route('blogs')}}">Blog</a></li>
+						<li><a href="{{route('contactus')}}">Contact Us</a></li>
 					</ul>
 					<ul class="footer_social">
 						<li>
